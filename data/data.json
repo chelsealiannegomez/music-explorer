@@ -1,0 +1,430 @@
+[
+  {
+    "playlistID": "0",
+    "playlist_name": "Chill Vibes",
+    "playlist_author": "LofiLover",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 745,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Tycho",
+        "title": "Awake",
+        "album": "Awake",
+        "duration": "4:43",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "FKJ",
+        "title": "Tadow",
+        "album": "French Kiwi Juice",
+        "duration": "7:00",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Bonobo",
+        "title": "Kerala",
+        "album": "Migration",
+        "duration": "3:57",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "ODESZA",
+        "title": "A Moment Apart",
+        "album": "A Moment Apart",
+        "duration": "4:14",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "1",
+    "playlist_name": "Workout Boost",
+    "playlist_author": "GymRat42",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 860,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Eminem",
+        "title": "Till I Collapse",
+        "album": "The Eminem Show",
+        "duration": "4:58",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Kanye West",
+        "title": "Stronger",
+        "album": "Graduation",
+        "duration": "5:12",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Survivor",
+        "title": "Eye of the Tiger",
+        "album": "Eye of the Tiger",
+        "duration": "4:05",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "2",
+    "playlist_name": "Classic Rock",
+    "playlist_author": "VinylFan",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 710,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Led Zeppelin",
+        "title": "Stairway to Heaven",
+        "album": "Led Zeppelin IV",
+        "duration": "8:02",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Rolling Stones",
+        "title": "Paint It Black",
+        "album": "Aftermath",
+        "duration": "3:45",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Beatles",
+        "title": "Come Together",
+        "album": "Abbey Road",
+        "duration": "4:19",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Queen",
+        "title": "Bohemian Rhapsody",
+        "album": "A Night at the Opera",
+        "duration": "5:55",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Jimi Hendrix",
+        "title": "All Along the Watchtower",
+        "album": "Electric Ladyland",
+        "duration": "4:01",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "3",
+    "playlist_name": "Jazz Nights",
+    "playlist_author": "SmoothSax",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 590,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Miles Davis",
+        "title": "So What",
+        "album": "Kind of Blue",
+        "duration": "9:22",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "John Coltrane",
+        "title": "Giant Steps",
+        "album": "Giant Steps",
+        "duration": "4:43",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Ella Fitzgerald",
+        "title": "Dream a Little Dream of Me",
+        "album": "Ella Fitzgerald Sings the Rodgers & Hart Songbook",
+        "duration": "3:08",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "4",
+    "playlist_name": "Top 40",
+    "playlist_author": "DJMixMaster",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 880,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Dua Lipa",
+        "title": "Don't Start Now",
+        "album": "Future Nostalgia",
+        "duration": "3:03",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Weeknd",
+        "title": "Blinding Lights",
+        "album": "After Hours",
+        "duration": "3:20",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Billie Eilish",
+        "title": "Bad Guy",
+        "album": "When We All Fall Asleep, Where Do We Go?",
+        "duration": "3:14",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Harry Styles",
+        "title": "As It Was",
+        "album": "Harry's House",
+        "duration": "2:47",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "5",
+    "playlist_name": "Sunday Mornings",
+    "playlist_author": "CoffeeTunes",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 645,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Norah Jones",
+        "title": "Come Away With Me",
+        "album": "Come Away With Me",
+        "duration": "3:18",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Jack Johnson",
+        "title": "Banana Pancakes",
+        "album": "In Between Dreams",
+        "duration": "3:12",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Iron & Wine",
+        "title": "Such Great Heights",
+        "album": "The Shepherd's Dog",
+        "duration": "4:11",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "6",
+    "playlist_name": "Indie Essentials",
+    "playlist_author": "IndieKid",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 720,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Arctic Monkeys",
+        "title": "Do I Wanna Know?",
+        "album": "AM",
+        "duration": "4:33",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Strokes",
+        "title": "Last Nite",
+        "album": "Is This It",
+        "duration": "3:17",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Florence + The Machine",
+        "title": "Dog Days Are Over",
+        "album": "Lungs",
+        "duration": "4:12",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Vampire Weekend",
+        "title": "A-Punk",
+        "album": "Vampire Weekend",
+        "duration": "2:18",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "7",
+    "playlist_name": "Electronic Dreams",
+    "playlist_author": "SynthWaveX",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 640,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Daft Punk",
+        "title": "One More Time",
+        "album": "Discovery",
+        "duration": "5:20",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Deadmau5",
+        "title": "Strobe",
+        "album": "For Lack of a Better Name",
+        "duration": "10:37",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Calvin Harris",
+        "title": "Summer",
+        "album": "Motion",
+        "duration": "3:44",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "8",
+    "playlist_name": "Hip Hop Hits",
+    "playlist_author": "Beatz4Life",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 905,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Kendrick Lamar",
+        "title": "HUMBLE.",
+        "album": "DAMN.",
+        "duration": "2:57",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Drake",
+        "title": "God's Plan",
+        "album": "Scorpion",
+        "duration": "3:19",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Nicki Minaj",
+        "title": "Super Bass",
+        "album": "Pink Friday",
+        "duration": "3:39",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "J. Cole",
+        "title": "No Role Modelz",
+        "album": "2014 Forest Hills Drive",
+        "duration": "4:52",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Cardi B",
+        "title": "Bodak Yellow",
+        "album": "Invasion of Privacy",
+        "duration": "3:44",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "9",
+    "playlist_name": "Romantic Evenings",
+    "playlist_author": "HeartBeats",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 675,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Ed Sheeran",
+        "title": "Perfect",
+        "album": "÷ (Divide)",
+        "duration": "4:23",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Adele",
+        "title": "Make You Feel My Love",
+        "album": "19",
+        "duration": "3:32",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "John Legend",
+        "title": "All of Me",
+        "album": "Love in the Future",
+        "duration": "4:29",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "10",
+    "playlist_name": "Road Trip",
+    "playlist_author": "WanderTune",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 830,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Tom Petty",
+        "title": "Free Fallin'",
+        "album": "Full Moon Fever",
+        "duration": "4:17",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Fleetwood Mac",
+        "title": "Go Your Own Way",
+        "album": "Rumours",
+        "duration": "3:43",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Killers",
+        "title": "Mr. Brightside",
+        "album": "Hot Fuss",
+        "duration": "3:42",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Lizzo",
+        "title": "Good as Hell",
+        "album": "Cuz I Love You",
+        "duration": "2:39",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  },
+  {
+    "playlistID": "11",
+    "playlist_name": "Throwback Jams",
+    "playlist_author": "RetroRider",
+    "playlist_art": "./assets/img/playlist.png",
+    "likes": 690,
+    "liked": false,
+    "songs": [
+      {
+        "artist": "Backstreet Boys",
+        "title": "I Want It That Way",
+        "album": "Millennium",
+        "duration": "3:34",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Spice Girls",
+        "title": "Wannabe",
+        "album": "Spice",
+        "duration": "2:53",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "NSYNC",
+        "title": "Bye Bye Bye",
+        "album": "No Strings Attached",
+        "duration": "3:20",
+        "art": "./assets/img/song.png"
+      }
+    ]
+  }
+]
