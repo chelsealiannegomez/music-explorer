@@ -10,8 +10,53 @@ body {
 }
 
 header {
-    padding-left: 10px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    background-image: url("https://i.pinimg.com/originals/39/84/5d/39845da0b2f69abe9fc0a78c337a4cfa.gif");
+    background-size: cover; 
+    background-attachment: fixed;
+    text-align: center;
 }
+
+h1 {
+    font-size: 80px;
+    margin: 0;
+    color: white;
+    text-shadow: black 1px 0 10px;
+}
+
+header div {
+    font-size: 20px;
+    border: solid;
+    border-color: grey;
+    margin: 25px 0 20px;
+    padding: 15px 80px 15px 80px;
+    border-radius: 10px;
+    background-color: grey;
+    color: black;
+    box-shadow: black 1px 0 10px;
+    transition: 0.3s
+}
+
+header div:hover{
+    background-color: darkgreen;
+    color: white;
+}
+
+header p {
+    margin: 0;
+    color: white;
+}
+
+header a:link, a:visited {
+    text-decoration: none;
+}
+
 
 span {
     position: fixed;
@@ -19,9 +64,22 @@ span {
 }
 
 main {
+    color: white;
+    min-height: 100vh;
+}
+
+main h1 {
+    margin: 20px;
+    font-size: 40px;
+}
+
+#all-playlists {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.2%;
+    row-gap: 12px;
+    margin-top: 15px;
 }
 
 .card {
@@ -30,30 +88,44 @@ main {
     border-radius: 5px;
     border-color: darkgrey;
     padding: 15px;
-    margin: 1.2%;
-    line-height: 0.5; 
+    transition: transform 0.2s ease-in-out;
+    background-color: black;
+    margin: 0;
+    position: relative;
 }
 
 .card h3 {
     font-weight: 400;
+    font-size: 18px;
+    margin: 5px 0 0 0;
 }
 
 .card p {
     font-weight: 50;
+    font-size: 15px;
+    margin-top: 5px;
 }
 
 .card-img {
     width: 100%;
 }
 
+.card:hover{ 
+    transform: scale(1.1);
+    z-index: 1;
+}
+
 .like {
-    width: 10%;
+    width: 15%;
     float: right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 .modal {
     display: none;
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     left: 0;
     top: 0;
@@ -81,7 +153,7 @@ main {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
@@ -106,4 +178,43 @@ main {
 
 .author {
     color: 	#b3b3b3;
+}
+
+.delete_icon {
+    width: 15%;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.dropbtn {
+    background-color: darkgreen;
+    color: white;
+    font-size: 15px;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: grey;
+}
+.sort-playlists {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display:none;
+    position:absolute;
+    background-color: darkgrey;
+    min-width: 160px;
+    z-index: 1;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 0 5px 0 5px;
+}
+
+p.dropdown:hover {
+    background-color: darkgray;
 }

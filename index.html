@@ -9,24 +9,48 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="index">
     <header>
-        <!-- Your header content here -->
          <h1>Music Playlist Explorer</h1>
+         <a href="featured.html"><div><p>Explore Featured Playlists</p></div></a>
+         <p>Or scroll down to discover more</p>
     </header>
 
-    <main id="all-playlists"> 
+    <main>
+        <h1>All Playlists</h1>
+        <div id="sort-playlists">
+            <button class="dropbtn">Sort By:</button>
+            <div id="dropdown" class="dropdown-content">
+                <p id="sort-by-title">Sort Alphabetically by Title</p>
+                <p id="sort-by-likes">Sort by Most Popular</p>
+            </div>
+        </div>
+        <div id="all-playlists"></div>
+        <div id="edit">
+            Edit
+        </div>
+        <div id="add-playlist">
+            Add Playlist
+        </div>
     </main>
 
     <div id="playlist-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h1 id="playlist-name"></h2>
+            <h1 id="playlist-name"></h1>
             <img id="playlist-art">
             <p id="playlist-author"></p>
             <button id="shuffle"></button>
             <div id="songs"></div>
-            
+        </div>
+    </div>
+
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="text" id="playlist-name" placeholder="Playlist Name"> <br>
+            <input type="text" id="creator-name" placeholder="Creator Name">
+            <button onclick="getInput()">Submit</button>
         </div>
     </div>
 
