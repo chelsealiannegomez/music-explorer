@@ -121,6 +121,7 @@ main h1 {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    cursor: pointer;
 }
 
 .modal {
@@ -145,7 +146,8 @@ main h1 {
     max-height: 70vh;
     overflow: auto;
     padding: 30px;
-    border-radius: 10px
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
 }
 
 .close {
@@ -244,16 +246,22 @@ main h1 {
 }
 
 .dropbtn {
-    background-color: darkgreen;
+    background-color: darkolivegreen;
     color: white;
     font-size: 15px;
     margin-left: 30px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: grey;
+    background-color: darkgreen;
 }
+
+.dropbtn-search:hover, .dropbtn-search:focus {
+    background-color: darkgreen;
+}
+
 .sort-playlists {
     position: relative;
     display: inline-block;
@@ -269,6 +277,28 @@ main h1 {
     margin-left: 15px;
     padding: 0 5px 0 5px;
     margin-left: 30px;
+}
+
+.dropbtn-search {
+    background-color: darkolivegreen;
+    color: white;
+    font-size: 15px;
+    margin-left: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown-search-content {
+    display:none;
+    position:absolute;
+    background-color: darkgrey;
+    min-width: 160px;
+    z-index: 1;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 0 5px 0 5px;
+    margin-left: 30px;
+    top:100%;
 }
 
 #searchBar {
@@ -303,13 +333,14 @@ main h1 {
 }
 
 #add-playlist {
-    width: 20%;
+    width: 30%;
     background-color: gray;
     height: 30px;
     margin: 10px;
     align-items: center;
     justify-content: center;
     display:flex;
+    cursor: pointer;
 }
 
 #add-modal h2 {
@@ -317,21 +348,77 @@ main h1 {
     margin: 0;
 }
 
+#edit-playlist {
+    width: 30%;
+    background-color: gray;
+    height: 30px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    cursor: pointer;
+}
+
+#delete-playlist {
+    width: 30%;
+    background-color: gray;
+    height: 30px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    cursor: pointer;
+}
+
 .edit-playlist-icon {
     width: 100%;
-    height: 100%;
-    background-color: red;
+    height: 20%;
+    background-color: darkslateblue;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    font-size: 24px;
+    cursor: pointer;
+    transform: 0.5s;
 }
 
-.edit-form p{
-    
+.edit-playlist-icon:hover {
+    height: 30%;
 }
 
 #edit-modal {
     z-index: 2;
 }
+
+#search-options {
+    display: flex;
+    position: relative;
+}
+
+#enter-search, #clear-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    background-color: darkgray;
+    margin: 0 0px 0 10px;
+    padding: 0 10px 0 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#enter-search:hover, #clear-search:hover{
+    background-color: darkolivegreen;
+}
+/* 
+#sort-by-title:hover, #sort-by-likes:hover, #sort-by-date:hover {
+    height: 100%;
+    width: 100%;
+    background-color: darkslategrey;
+} */

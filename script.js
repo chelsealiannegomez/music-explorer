@@ -183,40 +183,6 @@ function deleteMode(data){
     isToggled = !isToggled;
 }
 
-// function editPlaylist(data){
-//     const edit_button = document.getElementById("edit-playlist");
-//     edit_button.innerText = "Go back to viewing mode";
-//     const cards = document.querySelectorAll(".card");
-//     cards.forEach((card) => {        
-//         playlist = document.getElementById(card.id);
-//         playlist.innerHTML += "<div style='width:100%; height:100%; background-color:black; opacity:50%'>hi</div>"
-//         const data_card = data[findByID(data, card.id)]
-//         console.log(data_card);
-        
-//         card.addEventListener('mouseover', () => {
-//             card.style.transform = 'scale(1)';
-//             card.style.background_color = 'gray';
-//         })
-
-//         card.addEventListener('click', function(event) {
-//             event.preventDefault();
-//             openEditModal(data_card);
-//             console.log('mouseover')
-//             event.stopPropagation();
-//             displayPlaylists(data);
-//         })
-
-//     })
-//     isToggled = !isToggled;
-// }
-
-// function openEditModal(card) {
-//     const edit_name = document.getElementById('edit-name');
-//     const edit_author = document.getElementById('edit-author');
-    
-//     edit_name.value = card.playlist_name;
-// }
-
 function deleteObjectById(jsonData, id) {
     console.log(id);
     const index = jsonData.findIndex((obj) => obj.playlistID === id);
@@ -319,13 +285,13 @@ function openAddModal(data) {
     const form = document.querySelector('form');
 
     form.addEventListener('submit', (event) => {
+        event.stopImmediatePropagation();
         const newPlaylist = handleSubmit(event);
         const to_add = parseInput(newPlaylist, id);
         data.push(to_add);
         console.log(data);
         displayPlaylists(data);
         modal.style.display = "none";
-        event.stopPropagation();
         id = 1;
         add_btn.removeEventListener('click', addSongHandler);
     });
@@ -350,7 +316,7 @@ function editPlaylist(data) {
     
     cards.forEach((card) => {        
         playlist = document.getElementById(card.id);
-        playlist.innerHTML += "<div class='edit-playlist-icon'>Edit</div>"
+        playlist.innerHTML += "<div class='edit-playlist-icon'>EDIT</div>"
         
         to_edit = playlist.getElementsByClassName('edit-playlist-icon')[0];
 
@@ -393,6 +359,21 @@ function openEditModal(playlist, data) {
     const edit_creator = document.getElementById("edit_creator_name");
     edit_creator.value = playlist.playlist_author;
 
+    let song_entries = ""
+    for (let id = 0; id < playlist.songs.length; id++) {
+        song_entries += `
+            <label for="song${id+1}_name">Song #${id}</label><br>
+            <input name="song${id}_name" id="song${id}_name" value="${playlist.songs[id].title}"><br>
+            <input name="song${id}_artist" id="song${id}_artist" value="${playlist.songs[id].artist}"><br>
+            <input name="song${id}_album" id="song${id}_album" value="${playlist.songs[id].album}"><br>
+            <input name="song${id}_duration" id="song${id}_duration" value="${playlist.songs[id].artist}"><br>
+        `
+    }
+
+    let song_form = document.getElementById('edit-modal').getElementsByClassName("songs")[0];
+    song_form.innerHTML = song_entries;
+
+    
 
     const form = document.getElementById('edit-modal').querySelector('form');
 
@@ -401,7 +382,6 @@ function openEditModal(playlist, data) {
         console.log('edit submitted');
         const edited_playlist = handleSubmit(event);
         console.log(edited_playlist)
-        console.log('edited', edited_playlist);
         if (edited_playlist.playlist_name !== "") {
             data[findByID(data, playlist.playlistID)].playlist_name = edited_playlist.playlist_name;
             console.log("helo", data[findByID(data, playlist.playlistID)])
@@ -410,6 +390,11 @@ function openEditModal(playlist, data) {
         if (edited_playlist.creator_name !== "") {
             data[findByID(data, playlist.playlistID)].playlist_author = edited_playlist.creator_name;
         } 
+        console.log('edited_playlist');
+        
+        for (let i = 0; i < playlist.songs.length; i++) {
+            data[findByID(data, playlist.playlistID)].songs[i].artist = edited_playlist[`song${i}_artist`];
+        }
         displayPlaylists(data);
     });
 
@@ -424,18 +409,15 @@ function openEditModal(playlist, data) {
     }
 }
 
-function editData(playlist) {
-    
-}
-
 function parseInput(playlist, num_songs) {
     console.log(playlist);
     const new_playlist = new Object();
     new_playlist.playlistID = num_playlists.toString();
     num_playlists += 1;
+    console.log('new id', num_playlists);
     new_playlist.playlist_name = playlist.playlist_name;
     new_playlist.playlist_author = playlist.creator_name;
-    new_playlist.playlist_art = "./assets/img/playlist.png"
+    new_playlist.playlist_art = playlist.img_url;
     new_playlist.likes = 0;
     new_playlist.liked = false;
     const keys = Object.keys(playlist);
@@ -466,13 +448,49 @@ function handleSubmit(event) {
     return new_playlist;
 }
 
-function search(data) {
+function searchTitle(data) {
     const searchBar = document.getElementById('searchBar');
-    searchBar.addEventListener('keyup', function() {
-        console.log('searching')
+    const enter = document.getElementById('enter-search');
+    const clear = document.getElementById('clear-search');
+    document.getElementsByName('search-bar')[0].placeholder = "Searching by title..."
+    console.log('searhcing title')
+    enter.addEventListener('click', searchingByTitle);
+    searchBar.addEventListener('keydown', function(event) {
+        if (event.key === "Enter") {
+            searchingByTitle();
+        }
+    })
+
+    function searchingByTitle() {
+        console.log('searching');
         const searchTerm = searchBar.value.toLowerCase();
         const filteredObjects = data.filter(obj => obj.playlist_name.toLowerCase().includes(searchTerm));
         displayPlaylists(filteredObjects);
+    }
+
+    clear.addEventListener('click', function() {
+        console.log('clearing');
+        searchBar.value = "";
+        displayPlaylists(data);
+    })
+}
+
+function searchAuthor(data) {
+    const searchBar = document.getElementById('searchBar');
+    const enter = document.getElementById('enter-search');
+    const clear = document.getElementById('clear-search');
+    document.getElementsByName('search-bar')[0].placeholder = "Searching by author..."
+
+    enter.addEventListener('click', function() {
+        console.log('searching');
+        const searchTerm = searchBar.value.toLowerCase();
+        const filteredObjects = data.filter(obj => obj.playlist_author.toLowerCase().includes(searchTerm));
+        displayPlaylists(filteredObjects);
+    })
+    clear.addEventListener('click', function() {
+        console.log('clearing');
+        searchBar.value = "";
+        displayPlaylists(data);
     })
 }
 
@@ -491,7 +509,7 @@ function indexPage() {
 
             window.onclick = function(event) {
                 if (!event.target.matches('.dropbtn')) {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
+                const dropdowns = document.getElementsByClassName("dropdown-content")[0];
                 document.getElementsByClassName("dropdown-content")[0].style.display = "none";
             }}
         })
@@ -500,8 +518,8 @@ function indexPage() {
         // Add sort by title button
 
         const sort_by_title_button = document.getElementById("sort-by-title");
+
         sort_by_title_button.addEventListener('click', function(event) {
-            console.log(data);
             document.getElementsByClassName("dropdown-content")[0].style.display = "none";
             data.sort(function(a,b) {
                 const textA = a.playlist_name.toUpperCase();
@@ -509,18 +527,31 @@ function indexPage() {
                 return (textA < textB) ? -1: (textA > textB) ? 1: 0;
             });
             displayPlaylists(data);
-            console.log(data);
+            sort_playlists.innerText = "Sorted By: Title (A-Z)"
         });
 
         const sort_by_likes_button = document.getElementById("sort-by-likes");
         sort_by_likes_button.addEventListener('click', function(event) {
             document.getElementsByClassName("dropdown-content")[0].style.display = "none";
             data.sort(function(a,b) {
-                const textA = a.likes;
-                const textB = b.likes;
+                const textA = Number(a.likes);
+                const textB = Number(b.likes);
                 return (textA < textB) ? 1: (textA > textB) ? -1: 0;
             });
             displayPlaylists(data);
+            sort_playlists.innerText = "Sorted By: Most Popular"
+        });
+
+        const sort_by_data_button = document.getElementById("sort-by-date");
+        sort_by_data_button.addEventListener('click', function(event) {
+            document.getElementsByClassName("dropdown-content")[0].style.display = "none";
+            data.sort(function(a,b) {
+                const textA = Number(a.playlistID);
+                const textB = Number(b.playlistID);
+                return (textA < textB) ? 1: (textA > textB) ? -1: 0;
+            });
+            displayPlaylists(data);
+            sort_playlists.innerText = "Sorted By: Date Added"
         });
 
         // Add delete button
@@ -554,8 +585,33 @@ function indexPage() {
             }
         });
 
+        //Add search by dropdown
+        const search_playlists = document.getElementsByClassName('dropbtn-search')[0];
+        search_playlists.addEventListener('click', function(event) {
+            console.log('search clicked');
+            document.getElementsByClassName("dropdown-search-content")[0].style.display = "block";
 
-        search(data);
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn-search')) {
+                    const dropdowns = document.getElementsByClassName("dropdown-search-content")[0];
+                    dropdowns.style.display = "none";
+            }}
+        })
+
+        searchTitle(data);
+
+
+        // Add search by author
+
+        const search_title = document.getElementById("search-title");
+        search_title.addEventListener('click', function(event) {
+            searchTitle(data);
+        });
+
+        const search_author = document.getElementById("search-author");
+        search_author.addEventListener('click', function(event) {
+            searchAuthor(data);
+        });
     });
 }
 

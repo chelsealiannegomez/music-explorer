@@ -19,26 +19,40 @@
     <main>
         <h1>All Playlists</h1>
         <div id="inline-box">
+
+            <div id="search-options">
+                <button class="dropbtn-search">Search:</button>
+                <div id="dropdown" class="dropdown-search-content">
+                    <p id="search-title">Search by Title</p>
+                    <p id="search-author">Search by Author</p>
+                </div>
+                <input type="text" id="searchBar" name="search-bar" placeholder="">
+                <div id="enter-search">Enter</div>
+                <div id="clear-search">Clear</div>
+            </div>
+
             <div id="sort-playlists">
-                <button class="dropbtn">Sort By:</button>
+                <button class="dropbtn">Sorted By: Default</button>
                 <div id="dropdown" class="dropdown-content">
-                    <p id="sort-by-title">Sort Alphabetically by Title</p>
-                    <p id="sort-by-likes">Sort by Most Popular</p>
+                    <div id="sort-by-title"><p>Sort Alphabetically by Title</p></div>
+                    <div id="sort-by-likes"><p>Sort by Most Popular</p></div>
+                    <div id="sort-by-date"><p>Sort by Date Added</p></div>
+                    
                 </div>
             </div>
-            <div><input type="text" id="searchBar" placeholder="Search by title..."></div>
-            
+
         </div>
+
         <div id="all-playlists"></div>
         <div class="options">
-            <div id="delete-playlist">
-                Delete Playlist
-            </div>
             <div id="add-playlist">
                 Add Playlist
             </div>
             <div id="edit-playlist">
                 Edit Playlist
+            </div>
+            <div id="delete-playlist">
+                Delete Playlist
             </div>
         </div>
     </main>
@@ -64,7 +78,8 @@
             <h2>Add Playlist</h2>
             <form>
                 <input name="playlist_name" type="text" id="playlist_name" placeholder="Playlist Name" required> <br>
-                <input name="creator_name" type="text" id="creator_name" placeholder="Creator Name" required> 
+                <input name="creator_name" type="text" id="creator_name" placeholder="Creator Name" required><br>
+                <input name="img_url" type="text" id="img_url" placeholder="Cover Image Address" required>  
                 <div class="add_songs"></div>
                 <div id="add-btn">Add Song</div>
                 <button type="submit">Submit</button>
@@ -80,8 +95,8 @@
                 <p>Playlist Name</p>
                 <input name="playlist_name" type="text" id="edit_playlist_name" placeholder="Playlist Name"> <br>
                 <p>Creator Name</p>
-                <input name="creator_name" type="text" id="edit_creator_name" placeholder="Creator Name"> 
-                <!-- <div class="songs"></div> -->
+                <input name="creator_name" type="text" id="edit_creator_name" placeholder="Creator Name"> <br>
+                <div class="songs"></div>
                 <button type="submit">Submit</button>
             </form>
         </div>

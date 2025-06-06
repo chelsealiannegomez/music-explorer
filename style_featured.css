@@ -63,6 +63,14 @@ main {
     top: 10px;
     left: 20px;
     text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: black;
 }
 
 .song {
