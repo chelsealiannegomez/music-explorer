@@ -34,6 +34,62 @@
         "album": "A Moment Apart",
         "duration": "4:14",
         "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Washed Out",
+        "title": "Feel It All Around",
+        "album": "Life of Leisure",
+        "duration": "3:48",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Petit Biscuit",
+        "title": "Sunset Lover",
+        "album": "Presence",
+        "duration": "3:58",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Khruangbin",
+        "title": "Maria También",
+        "album": "Con Todo El Mundo",
+        "duration": "3:47",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Lane 8",
+        "title": "Visions (feat. RBBTS)",
+        "album": "Brightest Lights",
+        "duration": "3:57",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Emancipator",
+        "title": "Soon It Will Be Cold Enough to Snow",
+        "album": "Soon It Will Be Cold Enough to Snow",
+        "duration": "3:59",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Boards of Canada",
+        "title": "Daylight Misfortune",
+        "album": "The Campfire Headphase",
+        "duration": "3:29",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Disclosure",
+        "title": "Latch (Acoustic) (feat. Sam Smith)",
+        "album": "Settle",
+        "duration": "3:40",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Groove Armada",
+        "title": "At the River",
+        "album": "Vertigo",
+        "duration": "6:33",
+        "art": "./assets/img/song.png"
       }
     ]
   },
@@ -64,6 +120,69 @@
         "title": "Eye of the Tiger",
         "album": "Eye of the Tiger",
         "duration": "4:05",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Queen",
+        "title": "We Will Rock You",
+        "album": "News of the World",
+        "duration": "2:01",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "AC/DC",
+        "title": "Thunderstruck",
+        "album": "The Razors Edge",
+        "duration": "4:52",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "DMX",
+        "title": "X Gon' Give It to Ya",
+        "album": "Grand Champ",
+        "duration": "3:38",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Fort Minor",
+        "title": "Remember the Name",
+        "album": "The Rising Tied",
+        "duration": "3:47",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Linkin Park",
+        "title": "In the End",
+        "album": "Hybrid Theory",
+        "duration": "3:36",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Daft Punk",
+        "title": "Harder, Better, Faster, Stronger",
+        "album": "Discovery",
+        "duration": "3:44",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Britney Spears",
+        "title": "Work Bitch",
+        "album": "Britney Jean",
+        "duration": "4:07",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Guns N' Roses",
+        "title": "Welcome to the Jungle",
+        "album": "Appetite for Destruction",
+        "duration": "4:33",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Cardi B",
+        "title": "I Like It",
+        "album": "Invasion of Privacy",
+        "duration": "4:13",
         "art": "./assets/img/song.png"
       }
     ]
@@ -110,6 +229,55 @@
         "album": "Electric Ladyland",
         "duration": "4:01",
         "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Eagles",
+        "title": "Hotel California",
+        "album": "Hotel California",
+        "duration": "6:30",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Pink Floyd",
+        "title": "Comfortably Numb",
+        "album": "The Wall",
+        "duration": "6:23",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Led Zeppelin",
+        "title": "Whole Lotta Love",
+        "album": "Led Zeppelin II",
+        "duration": "5:34",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Deep Purple",
+        "title": "Smoke on the Water",
+        "album": "Machine Head",
+        "duration": "5:40",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Who",
+        "title": "Baba O'Riley",
+        "album": "Who's Next",
+        "duration": "5:00",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Lynyrd Skynyrd",
+        "title": "Sweet Home Alabama",
+        "album": "Second Helping",
+        "duration": "4:43",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Creedence Clearwater Revival",
+        "title": "Fortunate Son",
+        "album": "Willy and the Poor Boys",
+        "duration": "2:20",
+        "art": "./assets/img/song.png"
       }
     ]
   },
@@ -140,6 +308,69 @@
         "title": "Dream a Little Dream of Me",
         "album": "Ella Fitzgerald Sings the Rodgers & Hart Songbook",
         "duration": "3:08",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Louis Armstrong",
+        "title": "What a Wonderful World",
+        "album": "What a Wonderful World",
+        "duration": "2:17",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Frank Sinatra",
+        "title": "Fly Me to the Moon",
+        "album": "It Might as Well Be Swing",
+        "duration": "2:27",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Dave Brubeck Quartet",
+        "title": "Take Five",
+        "album": "Time Out",
+        "duration": "5:24",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Billie Holiday",
+        "title": "God Bless the Child",
+        "album": "Strange Fruit",
+        "duration": "2:56",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Chet Baker",
+        "title": "My Funny Valentine",
+        "album": "Chet Baker Sings",
+        "duration": "2:21",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Nina Simone",
+        "title": "Feeling Good",
+        "album": "I Put a Spell on You",
+        "duration": "2:53",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Herbie Hancock",
+        "title": "Cantaloupe Island",
+        "album": "Empyrean Isles",
+        "duration": "5:32",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Thelonious Monk",
+        "title": "'Round Midnight",
+        "album": "Genius of Modern Music: Vol. 1",
+        "duration": "3:07",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Duke Ellington",
+        "title": "Take the 'A' Train",
+        "album": "Never No Lament: The Blanton-Webster Band",
+        "duration": "2:55",
         "art": "./assets/img/song.png"
       }
     ]
@@ -179,6 +410,62 @@
         "album": "Harry's House",
         "duration": "2:47",
         "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Olivia Rodrigo",
+        "title": "good 4 u",
+        "album": "SOUR",
+        "duration": "2:58",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Doja Cat",
+        "title": "Kiss Me More (feat. SZA)",
+        "album": "Planet Her",
+        "duration": "3:28",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Lil Nas X",
+        "title": "MONTERO (Call Me By Your Name)",
+        "album": "MONTERO",
+        "duration": "2:17",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Taylor Swift",
+        "title": "Anti-Hero",
+        "album": "Midnights",
+        "duration": "3:20",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Post Malone",
+        "title": "Circles",
+        "album": "Hollywood's Bleeding",
+        "duration": "3:35",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Ariana Grande",
+        "title": "Positions",
+        "album": "Positions",
+        "duration": "2:52",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Ed Sheeran",
+        "title": "Shape of You",
+        "album": "÷ (Divide)",
+        "duration": "3:53",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Justin Bieber",
+        "title": "Peaches (feat. Daniel Caesar & Giveon)",
+        "album": "Justice",
+        "duration": "3:18",
+        "art": "./assets/img/song.png"
       }
     ]
   },
@@ -207,8 +494,71 @@
       {
         "artist": "Iron & Wine",
         "title": "Such Great Heights",
-        "album": "The Shepherd's Dog",
+        "album": "Garden State Soundtrack",
         "duration": "4:11",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Ray LaMontagne",
+        "title": "Jolene",
+        "album": "Trouble",
+        "duration": "4:10",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Ben Howard",
+        "title": "Only Love",
+        "album": "Every Kingdom",
+        "duration": "4:09",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Bon Iver",
+        "title": "Skinny Love",
+        "album": "For Emma, Forever Ago",
+        "duration": "3:59",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Fleet Foxes",
+        "title": "White Winter Hymnal",
+        "album": "Fleet Foxes",
+        "duration": "2:27",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Lumineers",
+        "title": "Ho Hey",
+        "album": "The Lumineers",
+        "duration": "2:43",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Mumford & Sons",
+        "title": "Little Lion Man",
+        "album": "Sigh No More",
+        "duration": "4:06",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Hozier",
+        "title": "Take Me to Church",
+        "album": "Hozier",
+        "duration": "4:01",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Coldplay",
+        "title": "Yellow",
+        "album": "Parachutes",
+        "duration": "4:26",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Damien Rice",
+        "title": "The Blower's Daughter",
+        "album": "O",
+        "duration": "4:43",
         "art": "./assets/img/song.png"
       }
     ]
@@ -248,6 +598,62 @@
         "album": "Vampire Weekend",
         "duration": "2:18",
         "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Foster the People",
+        "title": "Pumped Up Kicks",
+        "album": "Torches",
+        "duration": "3:59",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Tame Impala",
+        "title": "The Less I Know The Better",
+        "album": "Currents",
+        "duration": "3:36",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "MGMT",
+        "title": "Kids",
+        "album": "Oracular Spectacular",
+        "duration": "5:02",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "The Killers",
+        "title": "Mr. Brightside",
+        "album": "Hot Fuss",
+        "duration": "3:42",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Cage the Elephant",
+        "title": "Ain't No Rest for the Wicked",
+        "album": "Cage the Elephant",
+        "duration": "2:55",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Death Cab for Cutie",
+        "title": "Transatlanticism",
+        "album": "Transatlanticism",
+        "duration": "7:55",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Alt-J",
+        "title": "Breezeblocks",
+        "album": "An Awesome Wave",
+        "duration": "3:47",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Arcade Fire",
+        "title": "Wake Up",
+        "album": "Funeral",
+        "duration": "5:35",
+        "art": "./assets/img/song.png"
       }
     ]
   },
@@ -278,6 +684,69 @@
         "title": "Summer",
         "album": "Motion",
         "duration": "3:44",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Avicii",
+        "title": "Levels",
+        "album": "Levels",
+        "duration": "3:19",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Swedish House Mafia",
+        "title": "Don't You Worry Child (feat. John Martin)",
+        "album": "Until Now",
+        "duration": "3:32",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Kygo",
+        "title": "Firestone (feat. Conrad Sewell)",
+        "album": "Cloud Nine",
+        "duration": "4:32",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Flume",
+        "title": "Never Be Like You (feat. Kai)",
+        "album": "Skin",
+        "duration": "3:54",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Porter Robinson",
+        "title": "Shelter",
+        "album": "Shelter",
+        "duration": "3:39",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "ODESZA",
+        "title": "Sun Models (feat. Madelyn Grant)",
+        "album": "In Return",
+        "duration": "2:40",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Disclosure",
+        "title": "White Noise (feat. AlunaGeorge)",
+        "album": "Settle",
+        "duration": "4:37",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Major Lazer",
+        "title": "Lean On (feat. MØ & DJ Snake)",
+        "album": "Peace Is the Mission",
+        "duration": "2:56",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Eric Prydz",
+        "title": "Call on Me",
+        "album": "Call on Me",
+        "duration": "2:51",
         "art": "./assets/img/song.png"
       }
     ]
@@ -324,6 +793,55 @@
         "album": "Invasion of Privacy",
         "duration": "3:44",
         "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Travis Scott",
+        "title": "SICKO MODE",
+        "album": "ASTROWORLD",
+        "duration": "5:12",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Post Malone",
+        "title": "Rockstar (feat. 21 Savage)",
+        "album": "Beerbongs & Bentleys",
+        "duration": "3:38",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Megan Thee Stallion",
+        "title": "Savage Remix (feat. Beyoncé)",
+        "album": "Suga",
+        "duration": "4:02",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Eminem",
+        "title": "Lose Yourself",
+        "album": "8 Mile Soundtrack",
+        "duration": "5:20",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Dr. Dre",
+        "title": "Still D.R.E. (feat. Snoop Dogg)",
+        "album": "2001",
+        "duration": "4:30",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "2Pac",
+        "title": "California Love (feat. Dr. Dre)",
+        "album": "All Eyez On Me",
+        "duration": "4:44",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "OutKast",
+        "title": "Hey Ya!",
+        "album": "Speakerboxxx/The Love Below",
+        "duration": "3:55",
+        "art": "./assets/img/song.png"
       }
     ]
   },
@@ -354,6 +872,69 @@
         "title": "All of Me",
         "album": "Love in the Future",
         "duration": "4:29",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Bruno Mars",
+        "title": "Versace on the Floor",
+        "album": "24K Magic",
+        "duration": "4:21",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Sam Smith",
+        "title": "Stay With Me",
+        "album": "In the Lonely Hour",
+        "duration": "2:52",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Etta James",
+        "title": "At Last",
+        "album": "At Last!",
+        "duration": "3:00",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Righteous Brothers",
+        "title": "Unchained Melody",
+        "album": "Ghost Soundtrack",
+        "duration": "3:38",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Whitney Houston",
+        "title": "I Will Always Love You",
+        "album": "The Bodyguard Soundtrack",
+        "duration": "4:31",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Lonestar",
+        "title": "Amazed",
+        "album": "Lonely Grill",
+        "duration": "4:00",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Aerosmith",
+        "title": "I Don't Want to Miss a Thing",
+        "album": "Armageddon Soundtrack",
+        "duration": "4:59",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Ronan Keating",
+        "title": "When You Say Nothing At All",
+        "album": "Ronan",
+        "duration": "4:16",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Michael Bublé",
+        "title": "Feeling Good",
+        "album": "It's Time",
+        "duration": "3:57",
         "art": "./assets/img/song.png"
       }
     ]
@@ -393,6 +974,62 @@
         "album": "Cuz I Love You",
         "duration": "2:39",
         "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Queen",
+        "title": "Don't Stop Me Now",
+        "album": "Jazz",
+        "duration": "3:29",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Journey",
+        "title": "Don't Stop Believin'",
+        "album": "Escape",
+        "duration": "4:10",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Bon Jovi",
+        "title": "Livin' on a Prayer",
+        "album": "Slippery When Wet",
+        "duration": "4:09",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Red Hot Chili Peppers",
+        "title": "Dani California",
+        "album": "Stadium Arcadium",
+        "duration": "4:42",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Guns N' Roses",
+        "title": "Sweet Child o' Mine",
+        "album": "Appetite for Destruction",
+        "duration": "5:56",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Bruce Springsteen",
+        "title": "Born to Run",
+        "album": "Born to Run",
+        "duration": "4:31",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Steppenwolf",
+        "title": "Born to Be Wild",
+        "album": "Steppenwolf",
+        "duration": "3:30",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "blink-182",
+        "title": "All the Small Things",
+        "album": "Enema of the State",
+        "duration": "2:48",
+        "art": "./assets/img/song.png"
       }
     ]
   },
@@ -422,6 +1059,69 @@
         "artist": "NSYNC",
         "title": "Bye Bye Bye",
         "album": "No Strings Attached",
+        "duration": "3:20",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Destiny's Child",
+        "title": "Independent Women Part I",
+        "album": "Survivor",
+        "duration": "3:41",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Britney Spears",
+        "title": "...Baby One More Time",
+        "album": "...Baby One More Time",
+        "duration": "3:31",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "TLC",
+        "title": "No Scrubs",
+        "album": "FanMail",
+        "duration": "3:34",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Mariah Carey",
+        "title": "Fantasy",
+        "album": "Daydream",
+        "duration": "4:04",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Goo Goo Dolls",
+        "title": "Iris",
+        "album": "Dizzy Up the Girl",
+        "duration": "4:51",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Green Day",
+        "title": "Basket Case",
+        "album": "Dookie",
+        "duration": "3:01",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Oasis",
+        "title": "Wonderwall",
+        "album": "Morning Glory",
+        "duration": "4:18",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Aqua",
+        "title": "Barbie Girl",
+        "album": "Aquarium",
+        "duration": "3:16",
+        "art": "./assets/img/song.png"
+      },
+      {
+        "artist": "Smash Mouth",
+        "title": "All Star",
+        "album": "Astro Lounge",
         "duration": "3:20",
         "art": "./assets/img/song.png"
       }

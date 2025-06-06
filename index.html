@@ -18,29 +18,39 @@
 
     <main>
         <h1>All Playlists</h1>
-        <div id="sort-playlists">
-            <button class="dropbtn">Sort By:</button>
-            <div id="dropdown" class="dropdown-content">
-                <p id="sort-by-title">Sort Alphabetically by Title</p>
-                <p id="sort-by-likes">Sort by Most Popular</p>
+        <div id="inline-box">
+            <div id="sort-playlists">
+                <button class="dropbtn">Sort By:</button>
+                <div id="dropdown" class="dropdown-content">
+                    <p id="sort-by-title">Sort Alphabetically by Title</p>
+                    <p id="sort-by-likes">Sort by Most Popular</p>
+                </div>
             </div>
+            <div><input type="text" id="searchBar" placeholder="Search by title..."></div>
+            
         </div>
         <div id="all-playlists"></div>
-        <div id="edit">
-            Edit
-        </div>
-        <div id="add-playlist">
-            Add Playlist
+        <div class="options">
+            <div id="edit">
+                Edit Mode
+            </div>
+            <div id="add-playlist">
+                Add Playlist
+            </div>
         </div>
     </main>
 
     <div id="playlist-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h1 id="playlist-name"></h1>
-            <img id="playlist-art">
-            <p id="playlist-author"></p>
-            <button id="shuffle"></button>
+            <div class="album-details">
+                <div class="playlist-image"><img id="playlist-art"></div>
+                    <div class="album-text">
+                    <h2 id="playlist-name"></h2>
+                    <p id="playlist-author"></p>
+                    <button id="shuffle"></button>
+                </div>
+            </div>
             <div id="songs"></div>
         </div>
     </div>

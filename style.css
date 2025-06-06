@@ -69,7 +69,7 @@ main {
 }
 
 main h1 {
-    margin: 20px;
+    margin: 30px 30px 15px 30px;
     font-size: 40px;
 }
 
@@ -143,6 +143,8 @@ main h1 {
     width: 80%;
     max-height: 70vh;
     overflow: auto;
+    padding: 30px;
+    border-radius: 10px
 }
 
 .close {
@@ -158,18 +160,65 @@ main h1 {
     cursor: pointer;
 }
 
-#playlist-art {
+.album-details {
     display: flex;
-    width: 90px;
-    height: 90px;
+}
+
+#playlist-art {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#playlist-name {
+    margin: 0 0 0 5px;
+    font-size: 64px;
+}
+
+#playlist-author {
+    margin: 0 0 5px 5px;
+}
+
+#shuffle {
+    margin: 0 0 0 5px;
 }
 
 .song {
     border: solid;
+    display: flex;
+    align-items: center;
 }
 
 .song img {
-    width: 10%;
+    width: 5%;
+    margin: 10px;
+}
+
+.song-details {
+    width: 45%;
+}
+.song-title{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.song-artist{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    opacity: 75%;
+}
+.song-album{
+    margin: 0;
+    padding: 0;
+    width: 45%
+}
+.song-duration{
+    margin: 0;
+    padding: 0;
+    width: 5%;
 }
 
 .likes {
@@ -192,7 +241,7 @@ main h1 {
     background-color: darkgreen;
     color: white;
     font-size: 15px;
-    margin-left: 15px;
+    margin-left: 30px;
     padding: 5px;
 }
 
@@ -213,8 +262,44 @@ main h1 {
     cursor: pointer;
     margin-left: 15px;
     padding: 0 5px 0 5px;
+    margin-left: 30px;
 }
 
-p.dropdown:hover {
-    background-color: darkgray;
+#searchBar {
+    margin-left: 15px;
+    position: inline;
+    font-size: 15px;
+    padding: 5px;
+    width: 100%
+}
+
+#inline-box {
+    display: flex;
+}
+
+.options {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#edit {
+    display: flex;
+    width: 20%;
+    height: 30px;
+    background-color: gray;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-playlist {
+    width: 20%;
+    background-color: gray;
+    height: 30px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    display:flex;
 }

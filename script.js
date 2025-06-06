@@ -9,16 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Function for fetching data
 function callingToFetchData(){
-    console.log("Calling To Fetch Data");
     let url = "./data/data.json";
     return fetch(url)
         .then(response => {
-            console.log("Response");
             return response.json();
         })
         .then(data => {
-            console.log("Data is here: ");
-            console.log(data);
             return data;
         })
         .catch(error => console.error('Error:', error));
@@ -33,26 +29,35 @@ function addCardListener(data) {
     cards.forEach((card) => {        
         const card_id_elem = card.id;
         playlist = document.getElementById(card_id_elem);
-        playlist.innerHTML += "<img src='./assets/img/heart.png' class='like'>"
         
         const card_id = findByID(data, card.id);
+        console.log(card_id);
+
+        if (data[card_id].liked === false) {
+            playlist.innerHTML += "<img src='./assets/img/heart.png' class='like'>"
+        }
+        else {
+            playlist.innerHTML += "<img src='./assets/img/red_heart.png' class='like'>"
+        }    
+
         like = playlist.getElementsByClassName('like')[0];
 
         like.addEventListener('click', function(event) {
+            console.log('like added to ', data[card_id].playlist_name)
             event.preventDefault();
             if (data[card_id].liked === false) {
                 data[card_id].liked = true;
                 data[card_id].likes += 1
-                new_like = document.getElementById(card_id).getElementsByClassName("likes")[0];
+                new_like = document.getElementById(card_id_elem).getElementsByClassName("likes")[0];
                 new_like.innerHTML = "Likes: " + data[card_id].likes;
-                new_heart = document.getElementById(card_id).getElementsByClassName('like')[0].src = './assets/img/red_heart.png';
+                new_heart = document.getElementById(card_id_elem).getElementsByClassName('like')[0].src = './assets/img/red_heart.png';
             }
             else {
                 data[card_id].liked = false;
                 data[card_id].likes -= 1;
-                new_like = document.getElementById(card_id).getElementsByClassName("likes")[0];
+                new_like = document.getElementById(card_id_elem).getElementsByClassName("likes")[0];
                 new_like.innerText = "Likes: " + data[card_id].likes;
-                new_heart = document.getElementById(card_id).getElementsByClassName('like')[0].src = './assets/img/heart.png';
+                new_heart = document.getElementById(card_id_elem).getElementsByClassName('like')[0].src = './assets/img/heart.png';
             }
             event.stopPropagation();
         })
@@ -70,7 +75,6 @@ function addCardListener(data) {
 function openModal(playlist) {
     const modal = document.getElementById("playlist-modal");
     const span = document.getElementsByClassName("close")[0];
-    console.log("playlist", playlist);
     document.getElementById("playlist-name").innerText = playlist.playlist_name;
     document.getElementById("playlist-author").innerText = playlist.playlist_author;
     document.getElementById("playlist-art").src = playlist.playlist_art;
@@ -83,16 +87,18 @@ function openModal(playlist) {
         const artist = `
             <div class="song">
                 <img src=${song.art}>
-                <p> ${song.title} </p>
-                <p> ${song.artist} </p>
-                <p> ${song.album} </p>
+                <div class="song-details">
+                    <p class="song-title"> ${song.title} </p>
+                    <p class="song-artist"> ${song.artist} </p>
+                </div>
+                <p class="song-album"> ${song.album.toUpperCase()} </p>
+                <p class="song-duration"> ${song.duration} </p>
             </div>
         `;
         temp += artist;
     })
 
     tracks.innerHTML = temp;
-    console.log(allSongs);
     modal.style.display = "block";
 
     span.onclick = function () {
@@ -117,9 +123,12 @@ function openModal(playlist) {
             const artist = `
                 <div class="song">
                     <img src=${song.art}>
-                    <p> ${song.title} </p>
-                    <p> ${song.artist} </p>
-                    <p> ${song.album} </p>
+                    <div class="song-details">
+                        <p class="song-title"> ${song.title} </p>
+                        <p class="song-artist"> ${song.artist} </p>
+                    </div>
+                    <p class="song-album"> ${song.album.toUpperCase()} </p>
+                    <p class="song-duration"> ${song.duration} </p>
                 </div>
             `;
             temp += artist;
@@ -149,32 +158,22 @@ function findByID(jsonData, targetID) {
 
 // Function to go into edit mode
 function editMode(data){
-    console.log('edit mode');
     const edit_button = document.getElementById("edit");
     edit_button.innerText = "Go back to viewing mode";
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {        
-        const card_id_elem = card.id;
-        playlist = document.getElementById(card_id_elem);
+        playlist = document.getElementById(card.id);
         playlist.innerHTML += "<img src='./assets/img/delete.png' class='delete_icon'>"
         
-        const card_id = findByID(data, card.id);
-
         to_delete = playlist.getElementsByClassName('delete_icon')[0];
 
         card.addEventListener('mouseover', () => {
             card.style.transform = 'scale(1)';
         })
 
-        // card.addEventListener('mouseout', () => {
-        //     card.style.transform = 'scale(1)';
-        // })
-
         to_delete.addEventListener('click', function(event) {
             event.preventDefault();
-            console.log("event deleted")
-            data = deleteObjectById(data, card_id);
-            console.log(data);
+            data = deleteObjectById(data, card.id);
             event.stopPropagation();
             displayPlaylists(data);
         })
@@ -184,16 +183,19 @@ function editMode(data){
 }
 
 function deleteObjectById(jsonData, id) {
-    const index = jsonData.findIndex((obj) => obj.id === id);
+    console.log(id);
+    const index = jsonData.findIndex((obj) => obj.playlistID === id);
+    console.log('index', index);
     jsonData.splice(index, 1);
+    console.log('new data', jsonData);
     return jsonData;
 }
 
 function displayPlaylists(data) {
     const edit_button = document.getElementById("edit");
-    edit_button.innerText = "Edit"
+    edit_button.innerText = "Edit Mode"
     const main = document.getElementById("all-playlists");
-        if (data === undefined) {
+        if (data === undefined || data.length === 0) {
             main.innerText = "No playlists to display";
         }
         else {
@@ -219,7 +221,6 @@ function displayPlaylists(data) {
 
 function displayFeaturedPlaylist(playlist) {
     const featured = document.getElementById("featured");
-    featured.innerHTML += `<p>${playlist.playlist_name}</p>`
 
     const songs = playlist.songs;
     if (songs.length === 0) {
@@ -227,12 +228,15 @@ function displayFeaturedPlaylist(playlist) {
     }
     songs.forEach(song => {
         const song_div =
-        `<div>
-            <img src='${song.art}'>
-            <h2>${song.title}</h2>
-            <h3>${song.artist}</h3>
-            <p>${song.duration}</p>
-        </div>`
+        `<div class="song">
+                <img src=${song.art}>
+                <div class="song-details">
+                    <p class="song-title"> ${song.title} </p>
+                    <p class="song-artist"> ${song.artist} </p>
+                </div>
+                <p class="song-album"> ${song.album.toUpperCase()} </p>
+                <p class="song-duration"> ${song.duration} </p>
+            </div>`
         featured.innerHTML += song_div;
     })
 }
@@ -256,6 +260,16 @@ function openAddModal(data) {
     }
 }
 
+function search(data) {
+    const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('keyup', function() {
+        console.log('searching')
+        const searchTerm = searchBar.value.toLowerCase();
+        const filteredObjects = data.filter(obj => obj.playlist_name.toLowerCase().includes(searchTerm));
+        displayPlaylists(filteredObjects);
+    })
+}
+
 // Function for index.html
 var isToggled = false;
 function indexPage() { 
@@ -274,15 +288,29 @@ function indexPage() {
             }}
         })
 
+
         // Add sort by title button
 
         const sort_by_title_button = document.getElementById("sort-by-title");
         sort_by_title_button.addEventListener('click', function(event) {
+            console.log(data);
             document.getElementsByClassName("dropdown-content")[0].style.display = "none";
             data.sort(function(a,b) {
                 const textA = a.playlist_name.toUpperCase();
                 const textB = b.playlist_name.toUpperCase();
                 return (textA < textB) ? -1: (textA > textB) ? 1: 0;
+            });
+            displayPlaylists(data);
+            console.log(data);
+        });
+
+        const sort_by_likes_button = document.getElementById("sort-by-likes");
+        sort_by_likes_button.addEventListener('click', function(event) {
+            document.getElementsByClassName("dropdown-content")[0].style.display = "none";
+            data.sort(function(a,b) {
+                const textA = a.likes;
+                const textB = b.likes;
+                return (textA < textB) ? 1: (textA > textB) ? -1: 0;
             });
             displayPlaylists(data);
         });
@@ -291,7 +319,6 @@ function indexPage() {
         const edit_button = document.getElementById("edit");
 
         edit_button.addEventListener('click', function(event) {
-            console.log(isToggled);
             if (isToggled) {
                 editMode(data);
             }
@@ -306,6 +333,8 @@ function indexPage() {
         add_button.addEventListener('click', function(event) {
             addPlaylist(data);
         });
+
+        search(data);
     });
 }
 
@@ -317,5 +346,11 @@ function featurePage() {
         const featured_playlist = data[rand];
         // Display Playlist Information
         displayFeaturedPlaylist(featured_playlist);
+        
+        const featured_title = document.getElementById('featured-title');
+        featured_title.innerText = data[rand].playlist_name;
+
+        const featured_img = document.getElementById('featured-img');
+        featured_img.src = data[rand].playlist_art;
     });
 }
