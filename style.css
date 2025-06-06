@@ -432,6 +432,14 @@ main h1 {
     z-index: 2;
 }
 
+.edit-songs {
+    margin: 10px 0 10px 0;
+}
+
+.edit-songs input {
+    width: 30%;
+}
+
 #search-options {
     display: flex;
     position: relative;

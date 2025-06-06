@@ -409,11 +409,13 @@ function openEditModal(playlist, data) {
     let song_entries = ""
     for (let id = 0; id < playlist.songs.length; id++) {
         song_entries += `
-            <label for="song${id+1}_name">Song #${id}</label><br>
+            <div class="edit-songs">
+            <label for="song${id}_name">Song #${id+1}</label><br>
             <input name="song${id}_name" id="song${id}_name" value="${playlist.songs[id].title}"><br>
             <input name="song${id}_artist" id="song${id}_artist" value="${playlist.songs[id].artist}"><br>
             <input name="song${id}_album" id="song${id}_album" value="${playlist.songs[id].album}"><br>
             <input name="song${id}_duration" id="song${id}_duration" value="${playlist.songs[id].duration}"><br>
+            </div>
         `
     }
 
