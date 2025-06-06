@@ -2,7 +2,7 @@
 
 Submitted by: **Chelsea Lianne Tan Gomez**
 
-Estimated time spent: **15** hours spent in total
+Estimated time spent: **20** hours spent in total
 
 Deployed Application (**required**): [Music Playlist Explorer Deployed Site](https://music-explorer-67ol.onrender.com/)
 
@@ -130,9 +130,8 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
+<div style="position: relative; padding-bottom: 57.56929637526653%; height: 0;"><iframe src="https://www.loom.com/embed/875f4d0ed6484782845cd2fbc9794912?sid=3eb748b8-a04a-4ad4-9048-635a204eb1ac" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-`ADD_EMBEDDED_CODE_HERE`
 
 ### Reflection
 
@@ -146,10 +145,8 @@ If I had more time, I would style the components better since my components are 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think some things that went well are some of my hover effects, the functionality of the modals, and the search function. I noticed that one of my peers implemented song matching where if a song is already in one of the playlists, if it is added again, it will be recognized even with differences in capitalization and it will be automatically corrected. I would like to implement more features like that next time.
 
 ### Shout out
-
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
 Thank you to Jesus Perez for helping me out with my fetch function and explaining the concepts behind it while we debugged my code. Thank you as well to Terrence for pointing me in the right direction when I have a question about a feature.
