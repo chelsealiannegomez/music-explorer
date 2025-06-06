@@ -48,14 +48,14 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
     - [X] If previously liked:
       - [X] The like count on the playlist tile should decrease by 1.
       - [X] There should be visual feedback (such as the heart turning a different color) to show that the playlist has been unliked by the user.
-    - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please film yourself liking and unliking:
-      - [ ] a playlist with a like count of 0
-      - [ ] a playlist with a non-zero like count
+    - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please film yourself liking and unliking:
+      - [X] a playlist with a like count of 0
+      - [X] a playlist with a non-zero like count
 
 - [X] **Shuffle Songs**
   - [X] Enable users to shuffle the songs within a playlist using a shuffle button in the playlist's detail modal.
   - [X] When the shuffle button is clicked, the playlist's songs should display in a different order.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself shuffling the same playlist more than once. 
+  - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself shuffling the same playlist more than once. 
   
 - [X] **Featured Page**
   - [X] Application includes a dedicated page that randomly selects and displays a playlist, showing the playlist’s:
@@ -83,7 +83,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
       - [X] Title
       - [X] Artist
   - [X] The resulting playlist should display in the grid view.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist. 
+  - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist. 
 
 - [ ] **Edit Existing Playlists**
   - [X] Enable users to modify the details of existing playlists.
@@ -93,16 +93,16 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
     - [X] Author
     - [X] Songs
   - [X] The playlist grid view and playlist detail modal should update to display any changes (see Required Features, Criterion 1 & 2).
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself:
-    - [ ] Editing all of a playlist's features (name, creator, AND songs)
-    - [ ] Editing some of a playlist's features (name, creator, OR songs) 
+  - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself:
+    - [X] Editing all of a playlist's features (name, creator, AND songs)
+    - [X] Editing some of a playlist's features (name, creator, OR songs) 
 
 - [X] **Delete Playlists**
   - [X] Add a delete button to each playlist tile within the grid view.
   - [X] When clicked, the playlist is removed from the playlist grid view.
 
-- [ ] **Search Functionality**
-  - [ ] Implement a search bar that allows users to filter playlists by:
+- [X] **Search Functionality**
+  - [X] Implement a search bar that allows users to filter playlists by:
     - [X] Name 
     - [X] Author
   - [X] The search bar should include:

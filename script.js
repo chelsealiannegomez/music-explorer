@@ -261,6 +261,15 @@ function openAddModal(data) {
     const span = modal.getElementsByClassName("close")[0];
     modal.style.display = "block";
 
+    const name = document.getElementById('playlist_name');
+    name.value = "";
+
+    const creator = document.getElementById('creator_name');
+    creator.value = "";
+
+    const img_add = document.getElementById('img_url');
+    img_add.value = "";
+
     const add_songs = document.getElementsByClassName("add_songs")[0];
 
     // Initialize songs div with one song placeholder
