@@ -9,7 +9,7 @@ body {
     display: flex;
     align-items: center;
     height: 100vh;
-    width: 50%;
+    width: 45%;
     background: grey;
     top: 0;
     flex-direction: column;
@@ -24,7 +24,7 @@ body {
     display: flex;
     align-items: center;
     height: 100vh;
-    width: 50%;
+    width: 45%;
     background: grey;
     font-family: 'Open Sans';
     top: 0;
@@ -85,13 +85,14 @@ main {
 }
 
 .song-details {
-    width: 35%;
+    width: 50%;
 }
 .song-title{
     margin: 0;
     padding: 0;
     font-size: 18px;
     font-weight: 500;
+    margin-right: 10px;
 }
 .song-artist{
     margin: 0;
@@ -102,10 +103,10 @@ main {
 .song-album{
     margin: 0;
     padding: 0;
-    width: 45%
+    width: 45%;
 }
 .song-duration{
     margin: 0;
     padding: 0;
-    width: 10%;
+    width: 5%;
 }

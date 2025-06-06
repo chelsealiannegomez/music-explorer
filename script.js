@@ -1,3 +1,4 @@
+// Load functions for index page or feature page
 document.addEventListener('DOMContentLoaded', () => {
     if (document.body.classList.contains('index')) {
         indexPage();
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-// Function for fetching data
+// Function for fetching data from data.json in data folder
 function callingToFetchData(){
     let url = "./data/data.json";
     return fetch(url)
@@ -22,8 +23,8 @@ function callingToFetchData(){
 
 var num_playlists = 0;
 
-// Adding Event Listeners for Modals
 
+// Adding Event Listeners for Modals 
 function addCardListener(data) {
     const cards = document.querySelectorAll(".card");
 
@@ -32,8 +33,8 @@ function addCardListener(data) {
         playlist = document.getElementById(card_id_elem);
         
         const card_id = findByID(data, card.id);
-        console.log(card_id);
 
+        // Adding Like Icon
         if (data[card_id].liked === false) {
             playlist.innerHTML += "<img src='./assets/img/heart.png' class='like'>"
         }
@@ -43,6 +44,7 @@ function addCardListener(data) {
 
         like = playlist.getElementsByClassName('like')[0];
 
+        // Adjusting number of likes and like icon on click
         like.addEventListener('click', function(event) {
             console.log('like added to ', data[card_id].playlist_name)
             event.preventDefault();
@@ -63,16 +65,16 @@ function addCardListener(data) {
             event.stopPropagation();
         })
 
+        // Card Click Event Listener
         playlist.addEventListener('click', function(event) {
             event.preventDefault();
-            console.log('card clicked');
             openModal(data[card_id]);
         })
 
     })
 }
 
-// Opening Modal
+// Function to open Card Modal
 function openModal(playlist) {
     const modal = document.getElementById("playlist-modal");
     const span = document.getElementsByClassName("close")[0];
@@ -140,7 +142,7 @@ function openModal(playlist) {
 }
 
 
-// Function for shuffling
+// Function for shuffling array
 function shuffle(songs) {
     for (let i = songs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -183,6 +185,7 @@ function deleteMode(data){
     isToggled = !isToggled;
 }
 
+// Deletes object given playlistID
 function deleteObjectById(jsonData, id) {
     console.log(id);
     const index = jsonData.findIndex((obj) => obj.playlistID === id);
@@ -192,6 +195,7 @@ function deleteObjectById(jsonData, id) {
     return jsonData;
 }
 
+// Displays all playlists given current data
 function displayPlaylists(data) {
     const delete_button = document.getElementById("delete-playlist");
     delete_button.innerText = "Delete Playlist"
@@ -223,6 +227,7 @@ function displayPlaylists(data) {
     isEditToggled = !isEditToggled;
 }
 
+// Displays featured playlist
 function displayFeaturedPlaylist(playlist) {
     const featured = document.getElementById("featured");
 
@@ -245,10 +250,12 @@ function displayFeaturedPlaylist(playlist) {
     })
 }
 
+// Adding a playlist
 function addPlaylist(data){
     openAddModal(data);
 }
 
+// Opening a modal for adding playlist
 function openAddModal(data) {
     modal = document.getElementById('add-modal');
     const span = modal.getElementsByClassName("close")[0];
@@ -256,6 +263,7 @@ function openAddModal(data) {
 
     const add_songs = document.getElementsByClassName("add_songs")[0];
 
+    // Initialize songs div with one song placeholder
     let id = 1;
     add_songs.innerHTML = `
         <label for="song${id}_name">Song #${id}</label><br>
@@ -266,7 +274,7 @@ function openAddModal(data) {
         `
     const add_btn = document.getElementById('add-btn');
 
-
+    // Add button that when clicked will add another song placeholder
     add_btn.addEventListener('click', addSongHandler);
 
     function addSongHandler(event) {
@@ -282,6 +290,7 @@ function openAddModal(data) {
         event.stopPropagation();
     }
 
+    // Handle form submission
     const form = document.querySelector('form');
 
     form.addEventListener('submit', (event) => {
@@ -309,11 +318,55 @@ function openAddModal(data) {
     }
 }
 
+
+// Handles form submission, turns form into object to be read by parseInput
+function handleSubmit(event) {
+    event.preventDefault();
+    const form_data = new FormData(event.target);
+    
+    const new_playlist = Object.fromEntries(form_data.entries());
+    return new_playlist;
+}
+
+// Parse Input for Adding playlist
+function parseInput(playlist, num_songs) {
+    console.log(playlist);
+    const new_playlist = new Object();
+    new_playlist.playlistID = num_playlists.toString();
+    num_playlists += 1;
+    console.log('new id', num_playlists);
+    new_playlist.playlist_name = playlist.playlist_name;
+    new_playlist.playlist_author = playlist.creator_name;
+    new_playlist.playlist_art = playlist.img_url;
+    new_playlist.likes = 0;
+    new_playlist.liked = false;
+    const keys = Object.keys(playlist);
+    console.log('keys', keys);
+    let new_songs = [];
+    let id = 0;
+    for (let i = 0; i < num_songs; i++) {
+        id += 1;
+        const new_song = new Object();
+        new_song.artist = playlist[`song${id}_artist`];
+        new_song.title = playlist[`song${id}_name`];
+        new_song.album = playlist[`song${id}_album`];
+        new_song.duration = playlist[`song${id}_duration`];
+        new_song.art = "./assets/img/song.png";
+        new_songs.push(new_song);
+        console.log(new_song);
+    }
+    console.log(new_songs);
+    new_playlist.songs = new_songs;
+    return new_playlist;
+}
+
+// Edit Playlist mode
 function editPlaylist(data) {
     const cards = document.querySelectorAll(".card");
     edit_button = document.getElementById('edit-playlist');
     edit_button.innerText = "Go back to viewing mode";
     
+    // Add event listeners for editing for each card
     cards.forEach((card) => {        
         playlist = document.getElementById(card.id);
         playlist.innerHTML += "<div class='edit-playlist-icon'>EDIT</div>"
@@ -332,19 +385,9 @@ function editPlaylist(data) {
 
     })
     isEditToggled = !isEditToggled;
-
 }
 
-function handleEditInput(input, card, data) {
-    console.log('input', input);
-    if (input.edit_playlist_name !== "") {
-        data[card].playlist_name = input.edit_playlist_name;
-    } 
-    if (input.edit_creator_name !== "") {
-        data[card].playlist_author = input.edit_creator_name;
-    } 
-}
-
+// Opens Edit Modal
 function openEditModal(playlist, data) {
     modal = document.getElementById('edit-modal');
     const span = modal.getElementsByClassName("close")[0];
@@ -358,7 +401,8 @@ function openEditModal(playlist, data) {
 
     const edit_creator = document.getElementById("edit_creator_name");
     edit_creator.value = playlist.playlist_author;
-
+    
+    // Load all songs with values pre-filled
     let song_entries = ""
     for (let id = 0; id < playlist.songs.length; id++) {
         song_entries += `
@@ -373,7 +417,7 @@ function openEditModal(playlist, data) {
     let song_form = document.getElementById('edit-modal').getElementsByClassName("songs")[0];
     song_form.innerHTML = song_entries;
 
-    
+    // Handle form submission
 
     const form = document.getElementById('edit-modal').querySelector('form');
 
@@ -409,51 +453,14 @@ function openEditModal(playlist, data) {
     }
 }
 
-function parseInput(playlist, num_songs) {
-    console.log(playlist);
-    const new_playlist = new Object();
-    new_playlist.playlistID = num_playlists.toString();
-    num_playlists += 1;
-    console.log('new id', num_playlists);
-    new_playlist.playlist_name = playlist.playlist_name;
-    new_playlist.playlist_author = playlist.creator_name;
-    new_playlist.playlist_art = playlist.img_url;
-    new_playlist.likes = 0;
-    new_playlist.liked = false;
-    const keys = Object.keys(playlist);
-    console.log('keys', keys);
-    let new_songs = [];
-    let id = 0;
-    for (let i = 0; i < num_songs; i++) {
-        id += 1;
-        const new_song = new Object();
-        new_song.artist = playlist[`song${id}_artist`];
-        new_song.title = playlist[`song${id}_name`];
-        new_song.album = playlist[`song${id}_album`];
-        new_song.duration = playlist[`song${id}_duration`];
-        new_song.art = "./assets/img/song.png";
-        new_songs.push(new_song);
-        console.log(new_song);
-    }
-    console.log(new_songs);
-    new_playlist.songs = new_songs;
-    return new_playlist;
-}
-
-function handleSubmit(event) {
-    event.preventDefault();
-    const form_data = new FormData(event.target);
-    
-    const new_playlist = Object.fromEntries(form_data.entries());
-    return new_playlist;
-}
-
+// Search by Title
 function searchTitle(data) {
     const searchBar = document.getElementById('searchBar');
     const enter = document.getElementById('enter-search');
     const clear = document.getElementById('clear-search');
     document.getElementsByName('search-bar')[0].placeholder = "Searching by title..."
-    console.log('searhcing title')
+
+    // Add event listener for enter key
     enter.addEventListener('click', searchingByTitle);
     searchBar.addEventListener('keydown', function(event) {
         if (event.key === "Enter") {
@@ -461,6 +468,7 @@ function searchTitle(data) {
         }
     })
 
+    // Returns objects that include the search term in playlist name and displays the results
     function searchingByTitle() {
         console.log('searching');
         const searchTerm = searchBar.value.toLowerCase();
@@ -468,27 +476,39 @@ function searchTitle(data) {
         displayPlaylists(filteredObjects);
     }
 
+    // Clears search bar input, displays data
     clear.addEventListener('click', function() {
-        console.log('clearing');
         searchBar.value = "";
         displayPlaylists(data);
     })
 }
 
+// Search by Author
 function searchAuthor(data) {
     const searchBar = document.getElementById('searchBar');
     const enter = document.getElementById('enter-search');
     const clear = document.getElementById('clear-search');
     document.getElementsByName('search-bar')[0].placeholder = "Searching by author..."
 
-    enter.addEventListener('click', function() {
+    
+     // Add event listener for enter key
+    enter.addEventListener('click', searchingByAuthor);
+    searchBar.addEventListener('keydown', function(event) {
+        if (event.key === "Enter") {
+            searchingByAuthor();
+        }
+    })
+
+    // Returns objects that include the search term in playlist name and displays the results
+    function searchingByAuthor() {
         console.log('searching');
         const searchTerm = searchBar.value.toLowerCase();
         const filteredObjects = data.filter(obj => obj.playlist_author.toLowerCase().includes(searchTerm));
         displayPlaylists(filteredObjects);
-    })
+    }
+
+    // Clears search bar input, displays data
     clear.addEventListener('click', function() {
-        console.log('clearing');
         searchBar.value = "";
         displayPlaylists(data);
     })
@@ -516,7 +536,6 @@ function indexPage() {
 
 
         // Add sort by title button
-
         const sort_by_title_button = document.getElementById("sort-by-title");
 
         sort_by_title_button.addEventListener('click', function(event) {
@@ -597,12 +616,11 @@ function indexPage() {
                     dropdowns.style.display = "none";
             }}
         })
-
+        // Default is search by title
         searchTitle(data);
 
 
         // Add search by author
-
         const search_title = document.getElementById("search-title");
         search_title.addEventListener('click', function(event) {
             searchTitle(data);

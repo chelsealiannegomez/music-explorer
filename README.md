@@ -2,7 +2,7 @@
 
 Submitted by: **Chelsea Lianne Tan Gomez**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **15** hours spent in total
 
 Deployed Application (**required**): [Music Playlist Explorer Deployed Site](https://music-explorer-67ol.onrender.com/)
 
@@ -138,11 +138,11 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes, the topics discussed in the labs prepareed me to complete the assignments. I liked how the project still challenged us as they were a step above the labs. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time, I would style the components better since my components are functional but some features could look better in terms of spacing, color, and size. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
@@ -151,3 +151,5 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+Thank you to Jesus Perez for helping me out with my fetch function and explaining the concepts behind it while we debugged my code. Thank you as well to Terrence for pointing me in the right direction when I have a question about a feature.
