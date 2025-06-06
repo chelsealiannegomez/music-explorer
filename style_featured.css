@@ -50,6 +50,7 @@ main {
 #featured-img {
     width: 60%;
     margin: 10px;
+    aspect-ratio: 1 / 1;
 }
 
 #featured {
