@@ -332,8 +332,7 @@ main h1 {
     justify-content: center;
 }
 
-#add-playlist {
-    width: 30%;
+#add-playlist, #edit-playlist, #delete-playlist {
     background-color: gray;
     height: 30px;
     margin: 10px;
@@ -341,6 +340,14 @@ main h1 {
     justify-content: center;
     display:flex;
     cursor: pointer;
+    width: 30%;
+    transition-duration: 0.5s;
+    border-radius: 5px;
+}
+
+#add-playlist:hover, #edit-playlist:hover, #delete-playlist:hover{
+    background-color: darkolivegreen;
+    color: white;
 }
 
 #add-modal h2 {
@@ -348,26 +355,56 @@ main h1 {
     margin: 0;
 }
 
-#edit-playlist {
-    width: 30%;
-    background-color: gray;
-    height: 30px;
-    margin: 10px;
-    align-items: center;
-    justify-content: center;
-    display:flex;
+#add-btn {
+    background-color: lightgrey;
+    color: black;
+    width: 100px;
+    text-align: center;
+    margin: 10px 0 10px 0;
     cursor: pointer;
+    border-radius: 5px;
+    transition-duration: 0.3s;
 }
 
-#delete-playlist {
+#add-btn:hover {
+    background-color: grey;
+}
+
+#add-modal input {
     width: 30%;
-    background-color: gray;
-    height: 30px;
+}
+
+.add-song {
+    margin: 10px 0 5px 0;
+    width: 1000px;
+}
+
+#add-modal button {
+    width: 30%;
+    font-size: 20px;
+    background-color: darkolivegreen;
+    color:white;
     margin: 10px;
-    align-items: center;
-    justify-content: center;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+#add-modal button:hover {
+    background-color: darkgreen;
+}
+
+#add-modal {
+    text-align: center;
+}
+
+#playlist_name, #creator_name, #img_url {
+    font-size: 24px;
+}
+
+#add-modal form {
     display:flex;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
 }
 
 .edit-playlist-icon {
@@ -384,7 +421,7 @@ main h1 {
     display:flex;
     font-size: 24px;
     cursor: pointer;
-    transform: 0.5s;
+    transition-duration: 0.4s;
 }
 
 .edit-playlist-icon:hover {
@@ -416,9 +453,3 @@ main h1 {
 #enter-search:hover, #clear-search:hover{
     background-color: darkolivegreen;
 }
-/* 
-#sort-by-title:hover, #sort-by-likes:hover, #sort-by-date:hover {
-    height: 100%;
-    width: 100%;
-    background-color: darkslategrey;
-} */

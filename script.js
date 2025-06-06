@@ -266,12 +266,13 @@ function openAddModal(data) {
     // Initialize songs div with one song placeholder
     let id = 1;
     add_songs.innerHTML = `
+        <div class="add-song">
         <label for="song${id}_name">Song #${id}</label><br>
         <input name="song${id}_name" id="song${id}_name" placeholder="Name" required><br>
         <input name="song${id}_artist" id="song${id}_artist" placeholder="Artist" required><br>
         <input name="song${id}_album" id="song${id}_album" placeholder="Album" required><br>
         <input name="song${id}_duration" id="song${id}_duration" placeholder="Duration" required><br>
-        `
+        </div>`
     const add_btn = document.getElementById('add-btn');
 
     // Add button that when clicked will add another song placeholder
@@ -281,12 +282,14 @@ function openAddModal(data) {
         event.preventDefault();
         id += 1;
         add_songs.insertAdjacentHTML('beforeend', `
+            <div class="add-song">
             <label for="song${id}_name">Song #${id}</label><br>
             <input name="song${id}_name" id="song${id}_name" placeholder="Name" required><br>
             <input name="song${id}_artist" id="song${id}_artist" placeholder="Artist" required><br>
             <input name="song${id}_album" id="song${id}_album" placeholder="Album" required><br>
             <input name="song${id}_duration" id="song${id}_duration" placeholder="Duration" required><br>
-        `);
+            </div>
+            `);
         event.stopPropagation();
     }
 
@@ -410,7 +413,7 @@ function openEditModal(playlist, data) {
             <input name="song${id}_name" id="song${id}_name" value="${playlist.songs[id].title}"><br>
             <input name="song${id}_artist" id="song${id}_artist" value="${playlist.songs[id].artist}"><br>
             <input name="song${id}_album" id="song${id}_album" value="${playlist.songs[id].album}"><br>
-            <input name="song${id}_duration" id="song${id}_duration" value="${playlist.songs[id].artist}"><br>
+            <input name="song${id}_duration" id="song${id}_duration" value="${playlist.songs[id].duration}"><br>
         `
     }
 
@@ -423,21 +426,20 @@ function openEditModal(playlist, data) {
 
     form.addEventListener('submit', (event) => {
         modal.style.display = "none";
-        console.log('edit submitted');
         const edited_playlist = handleSubmit(event);
         console.log(edited_playlist)
         if (edited_playlist.playlist_name !== "") {
             data[findByID(data, playlist.playlistID)].playlist_name = edited_playlist.playlist_name;
-            console.log("helo", data[findByID(data, playlist.playlistID)])
-            console.log("editedplaylist", edited_playlist.playlist_name)
         } 
         if (edited_playlist.creator_name !== "") {
             data[findByID(data, playlist.playlistID)].playlist_author = edited_playlist.creator_name;
         } 
-        console.log('edited_playlist');
         
         for (let i = 0; i < playlist.songs.length; i++) {
             data[findByID(data, playlist.playlistID)].songs[i].artist = edited_playlist[`song${i}_artist`];
+            data[findByID(data, playlist.playlistID)].songs[i].title = edited_playlist[`song${i}_name`];
+            data[findByID(data, playlist.playlistID)].songs[i].album = edited_playlist[`song${i}_album`];
+            data[findByID(data, playlist.playlistID)].songs[i].duration = edited_playlist[`song${i}_duration`];
         }
         displayPlaylists(data);
     });
