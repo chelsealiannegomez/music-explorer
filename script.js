@@ -157,10 +157,10 @@ function findByID(jsonData, targetID) {
     return -1;
 }
 
-// Function to go into edit mode
-function editMode(data){
-    const edit_button = document.getElementById("edit");
-    edit_button.innerText = "Go back to viewing mode";
+// Function to go into delete mode
+function deleteMode(data){
+    const delete_button = document.getElementById("delete-playlist");
+    delete_button.innerText = "Go back to viewing mode";
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {        
         playlist = document.getElementById(card.id);
@@ -172,7 +172,7 @@ function editMode(data){
             card.style.transform = 'scale(1)';
         })
 
-        to_delete.addEventListener('click', function(event) {
+        to_delete.addEventListener('click', function (event) {
             event.preventDefault();
             data = deleteObjectById(data, card.id);
             event.stopPropagation();
@@ -227,8 +227,10 @@ function deleteObjectById(jsonData, id) {
 }
 
 function displayPlaylists(data) {
-    const edit_button = document.getElementById("edit");
-    edit_button.innerText = "Delete Playlist"
+    const delete_button = document.getElementById("delete-playlist");
+    delete_button.innerText = "Delete Playlist"
+    const edit_playlist_button = document.getElementById('edit-playlist');
+    edit_playlist_button.innerText = "Edit Playlist "
     const main = document.getElementById("all-playlists");
         if (data === undefined || data.length === 0) {
             main.innerText = "No playlists to display";
@@ -252,6 +254,7 @@ function displayPlaylists(data) {
             addCardListener(data);
         }
     isToggled = !isToggled;
+    isEditToggled = !isEditToggled;
 }
 
 function displayFeaturedPlaylist(playlist) {
@@ -285,7 +288,7 @@ function openAddModal(data) {
     const span = modal.getElementsByClassName("close")[0];
     modal.style.display = "block";
 
-    const add_songs = document.getElementsByClassName("add_songs")[0]
+    const add_songs = document.getElementsByClassName("add_songs")[0];
 
     let id = 1;
     add_songs.innerHTML = `
@@ -340,7 +343,90 @@ function openAddModal(data) {
     }
 }
 
+function editPlaylist(data) {
+    const cards = document.querySelectorAll(".card");
+    edit_button = document.getElementById('edit-playlist');
+    edit_button.innerText = "Go back to viewing mode";
+    
+    cards.forEach((card) => {        
+        playlist = document.getElementById(card.id);
+        playlist.innerHTML += "<div class='edit-playlist-icon'>Edit</div>"
+        
+        to_edit = playlist.getElementsByClassName('edit-playlist-icon')[0];
 
+        card.addEventListener('mouseover', () => {
+            card.style.transform = 'scale(1)';
+        })
+
+        to_edit.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            openEditModal(data[findByID(data, card.id)], data);
+        })
+
+    })
+    isEditToggled = !isEditToggled;
+
+}
+
+function handleEditInput(input, card, data) {
+    console.log('input', input);
+    if (input.edit_playlist_name !== "") {
+        data[card].playlist_name = input.edit_playlist_name;
+    } 
+    if (input.edit_creator_name !== "") {
+        data[card].playlist_author = input.edit_creator_name;
+    } 
+}
+
+function openEditModal(playlist, data) {
+    modal = document.getElementById('edit-modal');
+    const span = modal.getElementsByClassName("close")[0];
+    modal.style.display = "block";
+    console.log('playlist', playlist);
+
+    console.log(playlist.playlist_name);
+
+    const edit_name = document.getElementById("edit_playlist_name");
+    edit_name.setAttribute('value', playlist.playlist_name);
+
+    const edit_creator = document.getElementById("edit_creator_name");
+    edit_creator.value = playlist.playlist_author;
+
+
+    const form = document.getElementById('edit-modal').querySelector('form');
+
+    form.addEventListener('submit', (event) => {
+        modal.style.display = "none";
+        console.log('edit submitted');
+        const edited_playlist = handleSubmit(event);
+        console.log(edited_playlist)
+        console.log('edited', edited_playlist);
+        if (edited_playlist.playlist_name !== "") {
+            data[findByID(data, playlist.playlistID)].playlist_name = edited_playlist.playlist_name;
+            console.log("helo", data[findByID(data, playlist.playlistID)])
+            console.log("editedplaylist", edited_playlist.playlist_name)
+        } 
+        if (edited_playlist.creator_name !== "") {
+            data[findByID(data, playlist.playlistID)].playlist_author = edited_playlist.creator_name;
+        } 
+        displayPlaylists(data);
+    });
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function editData(playlist) {
+    
+}
 
 function parseInput(playlist, num_songs) {
     console.log(playlist);
@@ -392,6 +478,7 @@ function search(data) {
 
 // Function for index.html
 var isToggled = false;
+var isEditToggled = false;
 function indexPage() { 
     callingToFetchData().then(data => {
         num_playlists = data.length;
@@ -436,12 +523,12 @@ function indexPage() {
             displayPlaylists(data);
         });
 
-        // Add edit button
-        const edit_button = document.getElementById("edit");
+        // Add delete button
+        const delete_button = document.getElementById("delete-playlist");
 
-        edit_button.addEventListener('click', function(event) {
+        delete_button.addEventListener('click', function(event) {
             if (isToggled) {
-                editMode(data);
+                deleteMode(data);
             }
             else {
                 displayPlaylists(data);
@@ -449,11 +536,24 @@ function indexPage() {
         });
 
         // Add add button
-        const edit_playlist_button = document.getElementById("add-playlist");
+        const add_playlist_button = document.getElementById("add-playlist");
 
-        edit_playlist_button.addEventListener('click', function(event) {
+        add_playlist_button.addEventListener('click', function(event) {
             addPlaylist(data);
         });
+
+        // Add edit button
+        const edit_playlist_button = document.getElementById("edit-playlist");
+
+        edit_playlist_button.addEventListener('click', function(event) {
+            if (isEditToggled) {
+                editPlaylist(data);
+            }
+            else {
+                displayPlaylists(data);
+            }
+        });
+
 
         search(data);
     });

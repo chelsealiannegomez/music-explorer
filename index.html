@@ -31,11 +31,14 @@
         </div>
         <div id="all-playlists"></div>
         <div class="options">
-            <div id="edit">
+            <div id="delete-playlist">
                 Delete Playlist
             </div>
             <div id="add-playlist">
                 Add Playlist
+            </div>
+            <div id="edit-playlist">
+                Edit Playlist
             </div>
         </div>
     </main>
@@ -58,11 +61,27 @@
     <div id="add-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
+            <h2>Add Playlist</h2>
             <form>
                 <input name="playlist_name" type="text" id="playlist_name" placeholder="Playlist Name" required> <br>
                 <input name="creator_name" type="text" id="creator_name" placeholder="Creator Name" required> 
                 <div class="add_songs"></div>
                 <div id="add-btn">Add Song</div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Playlist</h2>
+            <form class="edit-form">
+                <p>Playlist Name</p>
+                <input name="playlist_name" type="text" id="edit_playlist_name" placeholder="Playlist Name"> <br>
+                <p>Creator Name</p>
+                <input name="creator_name" type="text" id="edit_creator_name" placeholder="Creator Name"> 
+                <!-- <div class="songs"></div> -->
                 <button type="submit">Submit</button>
             </form>
         </div>

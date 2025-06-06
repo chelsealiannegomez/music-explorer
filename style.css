@@ -141,6 +141,7 @@ main h1 {
     background-color: black;
     margin: 15% auto;
     width: 80%;
+    min-height: 70vh;
     max-height: 70vh;
     overflow: auto;
     padding: 30px;
@@ -309,4 +310,28 @@ main h1 {
     align-items: center;
     justify-content: center;
     display:flex;
+}
+
+#add-modal h2 {
+    font-size: 54px;
+    margin: 0;
+}
+
+.edit-playlist-icon {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.edit-form p{
+    
+}
+
+#edit-modal {
+    z-index: 2;
 }
