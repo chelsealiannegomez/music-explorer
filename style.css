@@ -37,10 +37,10 @@ header div {
     margin: 25px 0 20px;
     padding: 15px 80px 15px 80px;
     border-radius: 10px;
-    background-color: grey;
+    background-color: rgba(149, 165, 166, 0.75);
     color: black;
     box-shadow: black 1px 0 10px;
-    transition: 0.3s
+    transition: 0.3s;
 }
 
 header div:hover{
@@ -216,9 +216,10 @@ main h1 {
     width: 45%
 }
 .song-duration{
-    margin: 0;
+    margin: 0 10px 0 0;
     padding: 0;
     width: 5%;
+    text-align: center;
 }
 
 .likes {
@@ -235,6 +236,10 @@ main h1 {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.delete_icon:hover {
+    transform: scale(1.25);
 }
 
 .dropbtn {
@@ -282,6 +287,8 @@ main h1 {
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #edit {

@@ -20,6 +20,7 @@ function callingToFetchData(){
         .catch(error => console.error('Error:', error));
 }
 
+var num_playlists = 0;
 
 // Adding Event Listeners for Modals
 
@@ -182,6 +183,40 @@ function editMode(data){
     isToggled = !isToggled;
 }
 
+// function editPlaylist(data){
+//     const edit_button = document.getElementById("edit-playlist");
+//     edit_button.innerText = "Go back to viewing mode";
+//     const cards = document.querySelectorAll(".card");
+//     cards.forEach((card) => {        
+//         playlist = document.getElementById(card.id);
+//         playlist.innerHTML += "<div style='width:100%; height:100%; background-color:black; opacity:50%'>hi</div>"
+//         const data_card = data[findByID(data, card.id)]
+//         console.log(data_card);
+        
+//         card.addEventListener('mouseover', () => {
+//             card.style.transform = 'scale(1)';
+//             card.style.background_color = 'gray';
+//         })
+
+//         card.addEventListener('click', function(event) {
+//             event.preventDefault();
+//             openEditModal(data_card);
+//             console.log('mouseover')
+//             event.stopPropagation();
+//             displayPlaylists(data);
+//         })
+
+//     })
+//     isToggled = !isToggled;
+// }
+
+// function openEditModal(card) {
+//     const edit_name = document.getElementById('edit-name');
+//     const edit_author = document.getElementById('edit-author');
+    
+//     edit_name.value = card.playlist_name;
+// }
+
 function deleteObjectById(jsonData, id) {
     console.log(id);
     const index = jsonData.findIndex((obj) => obj.playlistID === id);
@@ -193,7 +228,7 @@ function deleteObjectById(jsonData, id) {
 
 function displayPlaylists(data) {
     const edit_button = document.getElementById("edit");
-    edit_button.innerText = "Edit Mode"
+    edit_button.innerText = "Delete Playlist"
     const main = document.getElementById("all-playlists");
         if (data === undefined || data.length === 0) {
             main.innerText = "No playlists to display";
@@ -249,15 +284,100 @@ function openAddModal(data) {
     modal = document.getElementById('add-modal');
     const span = modal.getElementsByClassName("close")[0];
     modal.style.display = "block";
+
+    const add_songs = document.getElementsByClassName("add_songs")[0]
+
+    let id = 1;
+    add_songs.innerHTML = `
+        <label for="song${id}_name">Song #${id}</label><br>
+        <input name="song${id}_name" id="song${id}_name" placeholder="Name" required><br>
+        <input name="song${id}_artist" id="song${id}_artist" placeholder="Artist" required><br>
+        <input name="song${id}_album" id="song${id}_album" placeholder="Album" required><br>
+        <input name="song${id}_duration" id="song${id}_duration" placeholder="Duration" required><br>
+        `
+    const add_btn = document.getElementById('add-btn');
+
+
+    add_btn.addEventListener('click', addSongHandler);
+
+    function addSongHandler(event) {
+        event.preventDefault();
+        id += 1;
+        add_songs.insertAdjacentHTML('beforeend', `
+            <label for="song${id}_name">Song #${id}</label><br>
+            <input name="song${id}_name" id="song${id}_name" placeholder="Name" required><br>
+            <input name="song${id}_artist" id="song${id}_artist" placeholder="Artist" required><br>
+            <input name="song${id}_album" id="song${id}_album" placeholder="Album" required><br>
+            <input name="song${id}_duration" id="song${id}_duration" placeholder="Duration" required><br>
+        `);
+        event.stopPropagation();
+    }
+
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (event) => {
+        const newPlaylist = handleSubmit(event);
+        const to_add = parseInput(newPlaylist, id);
+        data.push(to_add);
+        console.log(data);
+        displayPlaylists(data);
+        modal.style.display = "none";
+        event.stopPropagation();
+        id = 1;
+        add_btn.removeEventListener('click', addSongHandler);
+    });
+
     span.onclick = function () {
         modal.style.display = "none";
+        add_btn.removeEventListener('click', addSongHandler);
     }
 
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            add_btn.removeEventListener('click', addSongHandler);
         }
     }
+}
+
+
+
+function parseInput(playlist, num_songs) {
+    console.log(playlist);
+    const new_playlist = new Object();
+    new_playlist.playlistID = num_playlists.toString();
+    num_playlists += 1;
+    new_playlist.playlist_name = playlist.playlist_name;
+    new_playlist.playlist_author = playlist.creator_name;
+    new_playlist.playlist_art = "./assets/img/playlist.png"
+    new_playlist.likes = 0;
+    new_playlist.liked = false;
+    const keys = Object.keys(playlist);
+    console.log('keys', keys);
+    let new_songs = [];
+    let id = 0;
+    for (let i = 0; i < num_songs; i++) {
+        id += 1;
+        const new_song = new Object();
+        new_song.artist = playlist[`song${id}_artist`];
+        new_song.title = playlist[`song${id}_name`];
+        new_song.album = playlist[`song${id}_album`];
+        new_song.duration = playlist[`song${id}_duration`];
+        new_song.art = "./assets/img/song.png";
+        new_songs.push(new_song);
+        console.log(new_song);
+    }
+    console.log(new_songs);
+    new_playlist.songs = new_songs;
+    return new_playlist;
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    const form_data = new FormData(event.target);
+    
+    const new_playlist = Object.fromEntries(form_data.entries());
+    return new_playlist;
 }
 
 function search(data) {
@@ -274,6 +394,7 @@ function search(data) {
 var isToggled = false;
 function indexPage() { 
     callingToFetchData().then(data => {
+        num_playlists = data.length;
         displayPlaylists(data);
 
         const sort_playlists = document.getElementsByClassName('dropbtn')[0];
@@ -328,9 +449,9 @@ function indexPage() {
         });
 
         // Add add button
-        const add_button = document.getElementById("add-playlist");
+        const edit_playlist_button = document.getElementById("add-playlist");
 
-        add_button.addEventListener('click', function(event) {
+        edit_playlist_button.addEventListener('click', function(event) {
             addPlaylist(data);
         });
 
