@@ -3,7 +3,7 @@
     "playlistID": "0",
     "playlist_name": "Chill Vibes",
     "playlist_author": "LofiLover",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTapafiRM14c8dFq4dq3BoPg3IA4Gja0e7-Uw&s",
     "likes": 745,
     "liked": false,
     "songs": [
@@ -97,7 +97,7 @@
     "playlistID": "1",
     "playlist_name": "Workout Boost",
     "playlist_author": "GymRat42",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://cdn-images.dzcdn.net/images/cover/ac318c9e4b06ee96adff300194618f5e/500x500.jpg",
     "likes": 860,
     "liked": false,
     "songs": [
@@ -191,7 +191,7 @@
     "playlistID": "2",
     "playlist_name": "Classic Rock",
     "playlist_author": "VinylFan",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4XF0BRzRdbQI7vRTognCyXS4RoIfqwP4qmQ&s",
     "likes": 710,
     "liked": false,
     "songs": [
@@ -285,7 +285,7 @@
     "playlistID": "3",
     "playlist_name": "Jazz Nights",
     "playlist_author": "SmoothSax",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://i.discogs.com/YHNKKkSnB862eeW0HRuwa2xfqRsRtI9rtukhQ4FQBvM/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5Mzg1/MTUyLTE2MjU0ODIy/NTYtNzE0NC5qcGVn.jpeg",
     "likes": 590,
     "liked": false,
     "songs": [
@@ -379,7 +379,7 @@
     "playlistID": "4",
     "playlist_name": "Top 40",
     "playlist_author": "DJMixMaster",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://www.billboard.com/wp-content/uploads/2023/08/Best-Album-Covers-of-All-Time-billboard-1548.jpg?w=875&h=583&crop=1",
     "likes": 880,
     "liked": false,
     "songs": [
@@ -473,7 +473,7 @@
     "playlistID": "5",
     "playlist_name": "Sunday Mornings",
     "playlist_author": "CoffeeTunes",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://f4.bcbits.com/img/0034535292_10.jpg",
     "likes": 645,
     "liked": false,
     "songs": [
@@ -567,7 +567,7 @@
     "playlistID": "6",
     "playlist_name": "Indie Essentials",
     "playlist_author": "IndieKid",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://media.gq-magazine.co.uk/photos/6629390c665e4051c2738957/4:3/w_1440,h_1080,c_limit/Indie_albums_HP.jpg",
     "likes": 720,
     "liked": false,
     "songs": [
@@ -661,7 +661,7 @@
     "playlistID": "7",
     "playlist_name": "Electronic Dreams",
     "playlist_author": "SynthWaveX",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://upload.wikimedia.org/wikipedia/en/e/ef/Fact290.jpg",
     "likes": 0,
     "liked": false,
     "songs": [
@@ -755,7 +755,7 @@
     "playlistID": "8",
     "playlist_name": "Hip Hop Hits",
     "playlist_author": "Beatz4Life",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://www.nme.com/wp-content/uploads/2016/09/2014outkast_stankonia_101213.jpg",
     "likes": 905,
     "liked": false,
     "songs": [
@@ -849,7 +849,7 @@
     "playlistID": "9",
     "playlist_name": "Romantic Evenings",
     "playlist_author": "HeartBeats",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://marketplace.canva.com/EAF5cdrFKeE/1/0/1600w/canva-blue-and-red-illustrative-simple-minimalist-modern-album-cover-P-GHTvvSvZ8.jpg",
     "likes": 675,
     "liked": false,
     "songs": [
@@ -943,7 +943,7 @@
     "playlistID": "10",
     "playlist_name": "Road Trip",
     "playlist_author": "WanderTune",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://f4.bcbits.com/img/a4102622099_16.jpg",
     "likes": 830,
     "liked": false,
     "songs": [
@@ -1037,7 +1037,7 @@
     "playlistID": "11",
     "playlist_name": "Throwback Jams",
     "playlist_author": "RetroRider",
-    "playlist_art": "./assets/img/playlist.png",
+    "playlist_art": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/throwback-mixtape-cover-art-template-design-18d69bf1f721b5b24aef24ceea27908e_screen.jpg?ts=1635727196",
     "likes": 690,
     "liked": false,
     "songs": [
